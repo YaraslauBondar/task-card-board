@@ -1,0 +1,39 @@
+<div id="header-container">
+  <div class="left-menu flex-block">
+    <nav>
+      <ul class="navbar-nav">
+        <li *ngFor="let option of routes" class="nav-item">
+          <a [routerLink]="[option.link]"
+             [routerLinkActive]="['active-link']"
+             class="nav-link">
+            <img ngSrc="/assets/images/icons/{{option.icon}}" alt="" height="16" width="16"/>
+            <span class="menu-text">{{option.text}}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <button id="create-btn">
+      <img ngSrc="/assets/images/icons/add-logo.svg" alt="" height="16" width="16"/>
+      <span>Создать</span>
+      <img ngSrc="/assets/images/icons/dropdown-arrow.svg" alt="" height="16" width="16"/>
+    </button>
+  </div>
+  <div class="right-menu">
+    <div id="time-block">
+      <img ngSrc="/assets/images/icons/clock-logo.svg" alt="" height="16" width="16"/>
+      <span>{{time}}</span>
+    </div>
+
+    <div id="task-block">
+    </div>
+
+    <div id="messages-block">
+      <img ngSrc="/assets/images/icons/messages-logo.svg" alt="" height="18" width="17"/>
+    </div>
+
+    <div>
+      <img ngSrc="/assets/images/icons/account-logo.svg" alt="" height="30" width="30"/>
+    </div>
+
+  </div>
+</div>

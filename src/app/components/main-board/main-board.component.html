@@ -1,0 +1,10 @@
+<div>
+  <div class="tabs">
+    <button class="tab-btn" *ngFor="let option of tabs"
+            [routerLink]="[option.link]"
+            [routerLinkActive]="['active-link']">
+      {{option.text}}
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+</div>

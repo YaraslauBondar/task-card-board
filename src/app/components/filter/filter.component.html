@@ -1,0 +1,14 @@
+<div class="select-container flex-container">
+  <div class="select-selected input default-border"
+       (click)="openSelection()">
+    <span>{{choices[0]}}</span>
+    <img ngSrc="/assets/images/icons/dropdown-arrow.svg" alt="" height="16" width="16"/>
+  </div>
+  <div class="select-items column-container default-border" *ngIf="isOpen">
+    <div *ngFor="let choice of choices"
+         [ngClass]="{'selected': choice === choices[0]}"
+         (click)="selectValue(choice)">
+      <span>{{choice}}</span>
+    </div>
+  </div>
+</div>
