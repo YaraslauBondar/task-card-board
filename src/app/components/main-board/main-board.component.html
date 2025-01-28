@@ -3,7 +3,7 @@
     <button class="tab-btn" *ngFor="let option of tabs"
             [routerLink]="[option.link]"
             [routerLinkActive]="['active-link']">
-      {{option.text}}
+      {{option.text}}: {{getLength(option.link)}}
     </button>
   </div>
   <router-outlet></router-outlet>

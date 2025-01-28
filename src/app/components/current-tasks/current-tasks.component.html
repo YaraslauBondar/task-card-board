@@ -1,1 +1,16 @@
-<p>current-tasks works!</p>
+<div id="current-tasks">
+  <div class="tasks-title" (click)="openMyTasks()">
+    <img [ngClass]="{'closed': !isOpenMyTasks}" ngSrc="/assets/images/icons/dropdown-arrow.svg" alt="" height="16" width="16"/>
+    <span>Мои: {{myTasks.length}}</span>
+  </div>
+  <div class="tasks-container" *ngIf="isOpenMyTasks">
+    <app-task-card *ngFor="let task of myTasks" [task]="task"></app-task-card>
+  </div>
+  <div class="tasks-title" (click)="openOtherTasks()">
+    <img [ngClass]="{'closed': !isOpenOtherTasks}" ngSrc="/assets/images/icons/dropdown-arrow.svg" alt="" height="16" width="16"/>
+    <span>Не назначенные: {{otherTasks.length}}</span>
+  </div>
+  <div class="tasks-container" *ngIf="isOpenOtherTasks">
+    <app-task-card *ngFor="let task of otherTasks" [task]="task"></app-task-card>
+  </div>
+</div>

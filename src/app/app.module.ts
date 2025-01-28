@@ -13,6 +13,8 @@ import { TemplatesComponent } from './components/templates/templates.component';
 import { CurrentTasksComponent } from './components/current-tasks/current-tasks.component';
 import { ReviewTasksComponent } from './components/review-tasks/review-tasks.component';
 import { CoordinationTasksComponent } from './components/coordination-tasks/coordination-tasks.component';
+import { RightBoardComponent } from './components/right-board/right-board.component';
+import {ProgressStage} from './pipes/progress-stage.pipe';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,18 @@ import { CoordinationTasksComponent } from './components/coordination-tasks/coor
     TemplatesComponent,
     CurrentTasksComponent,
     ReviewTasksComponent,
-    CoordinationTasksComponent
+    CoordinationTasksComponent,
+    RightBoardComponent,
+    ProgressStage
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+
+  ],
+  exports: [
+    ProgressStage
   ],
   providers: [],
   bootstrap: [AppComponent]

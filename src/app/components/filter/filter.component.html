@@ -1,7 +1,7 @@
 <div class="select-container flex-container">
   <div class="select-selected input default-border"
        (click)="openSelection()">
-    <span>{{choices[0]}}</span>
+    <span>{{control.getRawValue() || choices[0]}}</span>
     <img ngSrc="/assets/images/icons/dropdown-arrow.svg" alt="" height="16" width="16"/>
   </div>
   <div class="select-items column-container default-border" *ngIf="isOpen">

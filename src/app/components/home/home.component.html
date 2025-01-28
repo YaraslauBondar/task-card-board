@@ -4,10 +4,19 @@
     <div id="date-container">
       <h2>Вторник, 27 Октября</h2>
     </div>
-    <div>
-      <app-filter></app-filter>
+    <div class="filters-container">
+      <app-filter [control]="product" [choices]="productOptions"></app-filter>
+      <app-filter [control]="category" [choices]="categoryOptions"></app-filter>
     </div>
-    <app-main-board></app-main-board>
+    <div id="boards">
+      <div class="flex-block">
+        <app-main-board></app-main-board>
+      </div>
+      <div class="flex-block">
+        <app-right-board></app-right-board>
+      </div>
+    </div>
+
   </div>
 </div>
 

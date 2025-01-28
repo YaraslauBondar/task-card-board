@@ -1,0 +1,10 @@
+<div class="tabs">
+  <div id="current-block">
+    <span>В работе:</span>
+    <app-task-card *ngFor="let task of workTasks" [task]="task"></app-task-card>
+  </div>
+  <div id="paused-block">
+    <span>На паузе: {{pausedTasks.length}}</span>
+    <app-task-card *ngFor="let task of pausedTasks" [task]="task"></app-task-card>
+  </div>
+</div>

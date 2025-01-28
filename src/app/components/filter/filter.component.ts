@@ -10,10 +10,10 @@ import {FormControl} from '@angular/forms';
 })
 export class FilterComponent {
 
-  public choices: string[] = [
+  @Input() choices: string[] = [
     'Все продукты', 'Название 1', 'Название 2', 'Название 3'
   ];
-  @Input() control!: FormControl<string>;
+  @Input() control!: FormControl<string | null>;
 
   public isOpen: boolean = false;
 
@@ -24,7 +24,7 @@ export class FilterComponent {
   }
 
   selectValue(choice: string) {
-    this.control.setValue(choice);
+    this.control?.setValue(choice);
     this.isOpen = false;
   }
 

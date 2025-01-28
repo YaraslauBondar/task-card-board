@@ -26,6 +26,25 @@
   color: color-styles.$text-primary;
 }
 
+#boards {
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.flex-block {
+  box-sizing: border-box;
+  width: 50%;
+  white-space: nowrap;
+}
+
+.filters-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
 h2 {
   margin: 0;
 }

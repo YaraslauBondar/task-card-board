@@ -1,0 +1,41 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#current-block {
+  max-width: 904px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 8px;
+  background-color: #EFFAFF;
+
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #16A4E3;
+
+}
+
+#paused-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #5E5E5E;
+
+}

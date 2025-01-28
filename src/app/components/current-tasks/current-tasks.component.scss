@@ -1,0 +1,37 @@
+#current-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tasks-title {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #5E5E5E;
+}
+
+.closed {
+  transform: rotate(180deg);
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 16px;
+  border-radius: 8px;
+  border: 1px solid #0000000A;
+  background-color: #F9FAFC;
+
+}
