@@ -4,10 +4,10 @@
       <ul class="navbar-nav">
         <li *ngFor="let option of routes" class="nav-item">
           <a [routerLink]="[option.link]"
-             [routerLinkActive]="['active-link']"
+
              class="nav-link">
             <img ngSrc="/assets/images/icons/{{option.icon}}" alt="" height="16" width="16"/>
-            <span class="menu-text">{{option.text}}</span>
+            <span class="menu-text" [routerLinkActive]="['active-link']">{{option.text}}</span>
           </a>
         </li>
       </ul>
@@ -25,6 +25,8 @@
     </div>
 
     <div id="task-block">
+      <img ngSrc="/assets/images/icons/{{currentTask.icon}}" alt="" height="16" width="16"/>
+      <span>{{currentTask.text | slice: 0:40}}...</span>
     </div>
 
     <div id="messages-block">
@@ -36,4 +38,24 @@
     </div>
 
   </div>
+</div>
+
+<div id="mobile-menu">
+  <ul class="navbar-nav">
+    <li >
+      <a [routerLink]="'/projects'" class="nav-link">
+        <img ngSrc="/assets/images/icons/projects-logo.svg" alt="" height="20" width="20"/>
+      </a>
+    </li>
+    <li >
+      <a [routerLink]="'/current'" class="nav-link">
+        <img ngSrc="/assets/images/icons/main-logo.svg" alt="" height="20" width="20"/>
+      </a>
+    </li>
+    <li >
+      <a [routerLink]="'/messages'" class="nav-link">
+        <img ngSrc="/assets/images/icons/messages-logo.svg" alt="" height="20" width="20"/>
+      </a>
+    </li>
+  </ul>
 </div>

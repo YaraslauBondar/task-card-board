@@ -1,3 +1,20 @@
+
+
+@media (max-width: 768px) {
+  .task-title {
+    max-height: 63px !important;
+    overflow: hidden;
+  }
+
+  .task-route {
+    display: none !important;
+  }
+
+  .progress-bar {
+    margin-top: 8px !important;
+  }
+}
+
 .task-card {
   padding: 12px;
   display: flex;

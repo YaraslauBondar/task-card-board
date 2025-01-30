@@ -1,5 +1,11 @@
 @use "../../../styles/abstracts/color-styles";
 
+@media (max-width: 768px) {
+  .tabs {
+    overflow: scroll;
+  }
+}
+
 .tabs {
   height: 36px;
   max-width: 904px;

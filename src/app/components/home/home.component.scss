@@ -1,5 +1,32 @@
 @use "../../../styles/abstracts/color-styles";
 
+@media (max-width: 768px) {
+  #home {
+    padding: 8px 16px 100px 16px !important;
+  }
+
+  #boards {
+    display: flex;
+    flex-flow: column-reverse;
+    gap: 20px !important;
+  }
+
+  #date-container {
+    display: none;
+  }
+
+  .filters-container {
+    display: none !important;
+  }
+
+  .flex-block {
+    width: 100% !important;
+  }
+
+}
+
+
+
 #home {
   padding: 0 40px;
   max-width: 1920px;

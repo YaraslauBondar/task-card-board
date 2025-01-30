@@ -22,7 +22,7 @@ export const mainTabs: ITab[] = [
 export const routes: ITab[] = [
   {
     text: 'Главная',
-    link: '/home',
+    link: '/',
     icon: 'main-logo.svg'
   },
   {

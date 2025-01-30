@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TaskMainService} from '../../services/task-main.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {categories, products} from '../../consts/filter-options.const';
+import {ITaskInfo} from '../../interfaces/task.interface';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,8 @@ export class HomeComponent implements OnInit {
   public productOptions: string[] = products;
   public categoryOptions: string[] = categories;
 
+  public currentTask!: ITaskInfo;
+
   constructor(
     public taskMainService: TaskMainService,
   ) {
@@ -27,6 +30,13 @@ export class HomeComponent implements OnInit {
     this.product = new FormControl('');
     this.category = new FormControl('');
 
-    this.taskMainService.getTasks();
+    this.taskMainService.getTasks().subscribe(tasks => {
+      const currentTask = tasks.filter(el =>
+        el.stages.current === 'work')[0];
+      this.currentTask = {
+        icon: currentTask.icon,
+        text: currentTask.title
+      }
+    });
   }
 }
