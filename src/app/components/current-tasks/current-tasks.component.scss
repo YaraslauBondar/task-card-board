@@ -1,3 +1,6 @@
+@use "../../../styles/abstracts/color-styles";
+@use "../../../styles/main-styles";
+
 #current-tasks {
   display: flex;
   flex-direction: column;
@@ -10,15 +13,10 @@
   align-items: center;
   gap: 8px;
   width: 100%;
-
-  font-family: 'Inter';
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #5E5E5E;
+  color: color-styles.$text-text;
 }
 
 .closed {
@@ -32,6 +30,5 @@
   gap: 16px;
   border-radius: 8px;
   border: 1px solid #0000000A;
-  background-color: #F9FAFC;
-
+  background-color: color-styles.$bg_blocks;
 }

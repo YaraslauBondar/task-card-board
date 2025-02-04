@@ -1,11 +1,11 @@
 @use "../../../styles/abstracts/color-styles";
-
+@use "../../../styles/main-styles";
 
 .select-selected {
   max-width: 228px;
   cursor: pointer;
   text-align: left;
-  background-color: #FFFFFF;
+  background-color: color-styles.$white;
   padding: 0 12px;
   border-radius: 4px;
   border: 1px solid #EFEFEF;
@@ -13,13 +13,9 @@
   display: inline-flex;
   gap: 4px;
   align-items: center;
-  font-family: 'Inter';
   font-size: 13px;
-  font-weight: 400;
   line-height: 18px;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #5E5E5E;
+  color: color-styles.$text-text;
 }
 
 .back-select-items {
@@ -32,7 +28,7 @@
 }
 
 .select-items {
-  background-color: #FFFFFF;
+  background-color: color-styles.$white;
   z-index: 10;
   max-height: 255px;
   position: absolute;
@@ -45,17 +41,12 @@
   border-radius: 4px;
   border: 1px solid #EFEFEF;
   box-shadow: 0 21px 26.3px 0 #0000001A, 0 -2px 4px 0 #0000000D;
-
-
 }
 
 .select-items div {
   height: 18px;
   gap: 8px;
-  /*margin: 9px 0;
-  padding: 0 15px;*/
   cursor: pointer;
-
   font-family: 'Inter';
   font-size: 13px;
   font-weight: 500;
@@ -63,8 +54,7 @@
   text-align: left;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-  color: #242424;
-
+  color: color-styles.$text-primary;
 }
 
 .select-items div:first-child {
@@ -78,36 +68,7 @@
 
 }
 
-.select-items div:hover {
-  /*background-color: color-styles.$yellow;*/
-}
-
-.selected {
-  /*background-color: color-styles.$yellow-default;*/
-}
-
-.has-value {
-  /*color: color-styles.$black-default;*/
-}
-
 .select-container {
-
   position: relative;
   text-decoration: none;
-  /*color: color-styles.$black-default;*/
 }
-
-/*
-.select-selected::before {
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  content: "";
-  right: 1rem;
-  pointer-events: none;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-  transform: rotate(45deg);
-  top: 12px;
-}
-*/

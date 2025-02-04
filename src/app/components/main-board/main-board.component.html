@@ -1,6 +1,6 @@
 <div>
   <div class="tabs">
-    <button class="tab-btn" *ngFor="let option of tabs"
+    <button class="tab-btn inter-text" *ngFor="let option of tabs"
             [routerLink]="[option.link]"
             [routerLinkActive]="['active-link']">
       {{option.text}}: {{getLength(option.link)}}

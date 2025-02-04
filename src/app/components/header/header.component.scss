@@ -1,12 +1,13 @@
 @use "../../../styles/abstracts/color-styles";
+@use "../../../styles/main-styles";
 
 @media (max-width: 768px) {
   #header-container {
-    display: none !important;
+    display: none;
   }
 
   #mobile-menu {
-    display: flex !important;
+    display: flex;
     align-items: center;
     width: 280px;
     height: 60px;
@@ -22,7 +23,7 @@
     bottom: 31px;
     z-index: 100;
 
-    margin: 0 calc((50% - 140px) / 2) !important;
+    margin: 0 calc((50% - 140px) / 2);
   }
 
   .navbar-nav {
@@ -31,22 +32,36 @@
   }
 
   .nav-link {
-    padding-right: 0 !important;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  #header-container {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 59px;
+    padding-top: 16px;
+    padding-bottom: 12px;
+    gap: 24px;
+  }
+
+  #mobile-menu {
+    display: none;
+  }
+
+  .nav-link {
+    padding-right: 24px;
   }
 }
 
 #mobile-menu {
-  display: none;
+
 }
 
 #header-container {
-  display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
-  height: 59px;
-  padding-top: 16px;
-  padding-bottom: 12px;
-  gap: 24px;
+
 }
 
 #create-btn {
@@ -59,14 +74,9 @@
   margin-left: 24px;
   gap: 4px;
   background-color: color-styles.$bg_grayDark;
-
-  font-family: 'Inter';
   font-size: 13px;
   font-weight: 500;
   line-height: 18px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
   color: color-styles.$active_blue;
 }
 
@@ -82,14 +92,9 @@
   background-color: color-styles.$active_blue;
   box-sizing: border-box;
   box-shadow: 0 5px 10px #334B5526, 0 -1px 4px #324D5912;
-
-  font-family: 'Roboto', sans-serif;
   font-size: 15px;
   font-weight: 500;
   line-height: 20px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
   color: color-styles.$white;
 }
 
@@ -116,21 +121,12 @@
   gap: 4px;
   border-radius: 6px;
   border: 0.5px solid color-styles.$divider;
-
   background-color: color-styles.$white;
   box-shadow: 0 2px 5px 0 #00000012;
-
   overflow: hidden;
-
-  font-family: 'Inter';
   font-size: 13px;
-  font-weight: 400;
   line-height: 18px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #5E5E5E;
-
+  color: color-styles.$text-text;
 }
 
 .nav-item {
@@ -161,7 +157,7 @@
   align-items: center;
   text-decoration: none;
   gap: 8px;
-  padding-right: 24px;
+
 }
 
 .flex-block {
@@ -169,12 +165,8 @@
 }
 
 .menu-text {
-  font-family: 'Inter';
   font-size: 14px;
-  font-weight: 400;
   line-height: 21px;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
   color: color-styles.$text-secondary;
 }
 
@@ -184,5 +176,5 @@
 }
 
 .active-link {
-  color: #16A4E3;
+  color: color-styles.$active_blue;
 }

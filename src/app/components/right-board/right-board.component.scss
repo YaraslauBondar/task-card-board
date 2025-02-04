@@ -1,3 +1,6 @@
+@use "../../../styles/abstracts/color-styles";
+@use "../../../styles/main-styles";
+
 .tabs {
   display: flex;
   flex-direction: column;
@@ -11,31 +14,19 @@
   flex-direction: column;
   gap: 12px;
   border-radius: 8px;
-  background-color: #EFFAFF;
-
-  font-family: 'Inter';
+  background-color: color-styles.$bg_blue;
+  color: color-styles.$active_blue;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #16A4E3;
-
 }
 
 #paused-block {
   display: flex;
   flex-direction: column;
   gap: 8px;
-
-  font-family: 'Inter';
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #5E5E5E;
-
+  color: color-styles.$text-text;
 }

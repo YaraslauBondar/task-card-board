@@ -1,7 +1,7 @@
 <div class="task-card" *ngIf="task">
   <div class="header-block">
     <div class="task-route hidden-route">
-      <div *ngFor="let element of task?.route" class="route-item">
+      <div *ngFor="let element of task?.route" class="route-item inter-text">
         <img *ngIf="element?.icon" ngSrc="/assets/images/icons/{{element?.icon}}" alt="" height="16" width="16"/>
         <span>{{element?.text}}</span>
         <span>/</span>
@@ -9,10 +9,10 @@
     </div>
     <div class="task-header">
       <img ngSrc="/assets/images/icons/{{task.icon}}" alt="" height="16" width="16"/>
-      <span class="task-title">
+      <span class="task-title inter-text">
       {{task.title}}
     </span>
-      <span class="task-number">
+      <span class="task-number inter-text">
       {{task.number}}
     </span>
     </div>
@@ -29,12 +29,12 @@
     <div class="info-container">
       <img ngSrc="/assets/images/icons/coordination-task.svg" alt="" height="16" width="16"/>
 
-      <div class="user-info text-info">
+      <div class="user-info text-info inter-text">
         <img ngSrc="/assets/images/icons/{{task.user?.icon || 'no-user.svg'}}" alt="" height="16" width="16"/>
         <span>{{task.user?.text || 'Любой сотрудник'}}</span>
       </div>
 
-      <div class="time-info text-info">
+      <div class="time-info text-info inter-text">
         <img ngSrc="/assets/images/icons/clock_small.svg" alt="" height="12" width="12"/>
         <span>{{task.time}}</span>
       </div>
@@ -42,26 +42,26 @@
 
     <div class="btn-container hidden-btn">
       <div class="regular-btn btn-block" *ngIf="!(task.stages.current === 'work')">
-        <button class="fix-btn small-btn btn">
+        <button class="fix-btn small-btn btn inter-text">
           <img ngSrc="/assets/images/icons/fix-button.svg" alt="" height="16" width="16"/>
           <span>Исправить</span>
         </button>
-        <button class="work-btn btn huge-btn">
+        <button class="work-btn btn huge-btn inter-text">
           <img ngSrc="/assets/images/icons/work-button.svg" alt="" height="16" width="16"/>
           <span>В работу</span>
         </button>
-        <button class="accept-btn btn small-btn">
+        <button class="accept-btn btn small-btn inter-text">
           <img ngSrc="/assets/images/icons/accept-button.svg" alt="" height="16" width="16"/>
           <span>Принять</span>
         </button>
 
       </div>
       <div class="current-btn btn-block" *ngIf="task.stages.current === 'work'">
-        <button class="pause-btn btn huge-btn">
+        <button class="pause-btn btn huge-btn inter-text">
           <img ngSrc="/assets/images/icons/pause-button.svg" alt="" height="16" width="16"/>
           <span>На паузу</span>
         </button>
-        <button class="accept-btn btn huge-btn">
+        <button class="accept-btn btn huge-btn inter-text">
           <img ngSrc="/assets/images/icons/ready-button.svg" alt="" height="16" width="16"/>
           <span>Готово</span>
         </button>

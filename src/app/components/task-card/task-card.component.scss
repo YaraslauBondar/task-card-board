@@ -1,17 +1,31 @@
-
+@use "../../../styles/abstracts/color-styles";
+@use "../../../styles/main-styles";
 
 @media (max-width: 768px) {
   .task-title {
-    max-height: 63px !important;
+    max-height: 63px;
     overflow: hidden;
   }
 
   .task-route {
-    display: none !important;
+    display: none;
   }
 
   .progress-bar {
-    margin-top: 8px !important;
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .task-route {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .progress-bar {
+    margin-top: 12px;
   }
 }
 
@@ -23,29 +37,16 @@
   border-radius: 8px;
   border: 1px solid #0000000A;
   box-shadow: 0 3px 10px 0 #263A5B0D;
-  background-color: #FFFFFF;
-
-}
-
-.task-route {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  margin-bottom: 6px;
+  background-color: color-styles.$white;
 }
 
 .route-item {
   display: flex;
   gap: 6px;
   align-items: center;
-  font-family: 'Inter';
   font-size: 14px;
-  font-weight: 400;
   line-height: 21px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #B0B0B0;
+  color: color-styles.$text-service;
 }
 
 .task-header {
@@ -54,26 +55,17 @@
 }
 
 .task-title {
-  font-family: 'Inter';
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #242424;
+  color: color-styles.$text-primary;
   text-wrap: auto;
 }
 
 .task-number {
-  font-family: 'Inter';
   font-size: 14px;
-  font-weight: 400;
   line-height: 21px;
-  text-align: right;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #7E7E7E;
+  color: color-styles.$text-secondary;
 }
 
 .task-content {
@@ -91,14 +83,8 @@
 }
 
 .text-info {
-  font-family: 'Inter';
   font-size: 13px;
-  font-weight: 400;
   line-height: 18px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-
 }
 
 .user-info {
@@ -106,14 +92,14 @@
   align-items: center;
   gap: 4px;
   width: 100%;
-  color: #7E7E7E;
+  color: color-styles.$text-secondary;
 }
 
 .time-info {
   display: flex;
   gap: 3px;
   align-items: center;
-  color: #B0B0B0;
+  color: color-styles.$text-service;
 }
 
 .progress-bar {
@@ -121,7 +107,6 @@
   display: flex;
   gap: 6px;
   height: 2px;
-  margin-top: 12px;
 }
 
 .progress-stage {
@@ -129,19 +114,19 @@
 }
 
 .ready {
-  background-color: #1BBA69;
+  background-color: color-styles.$green;
 }
 
 .work {
-  background-color: #16A4E3;
+  background-color: color-styles.$active_blue;
 }
 
 .progress {
-  background-color: #E0E0E0;
+  background-color: color-styles.$divider;
 }
 
 .paused {
-  background-color: #7E7E7E;
+  background-color: color-styles.$text-secondary;
 }
 
 .btn-block {
@@ -149,13 +134,12 @@
   display: flex;
   gap: 12px;
   align-items: center;
-
 }
 
 .fix-btn {
   border: 1px solid #CE00001A;
   background-color: #CE00000D;
-  color: #CE0000;
+  color: color-styles.$red;
 }
 
 .fix-btn:hover {
@@ -165,7 +149,7 @@
 .work-btn {
   background-color: #16A4E30D;
   border: 1px solid #16A4E31A;
-  color: #16A4E3;
+  color: color-styles.$active_blue;
 }
 
 .work-btn:hover {
@@ -175,7 +159,7 @@
 .accept-btn {
   background-color: #1BBA690D;
   border: 1px solid #1BBA691A;
-  color: #1BBA69;
+  color: color-styles.$green;
 }
 
 .accept-btn:hover {
@@ -185,7 +169,7 @@
 .pause-btn {
   background-color: #7E7E7E0D;
   border: 1px solid #7E7E7E1A;
-  color: #7E7E7E;
+  color: color-styles.$text-secondary;
 }
 
 .pause-btn:hover {
@@ -199,14 +183,8 @@
   align-items: center;
   border-radius: 6px;
   height: 44px;
-
-  font-family: 'Inter';
   font-size: 11px;
-  font-weight: 400;
   line-height: 16px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
 }
 
 .small-btn {
@@ -237,7 +215,7 @@
   overflow: hidden;
   transition: 0.3s linear;
   box-sizing: border-box;
-  background-color: #FFFFFF;
+  background-color: color-styles.$white;
 }
 
 .header-block:hover .hidden-route {

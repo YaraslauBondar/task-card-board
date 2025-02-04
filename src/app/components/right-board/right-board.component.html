@@ -1,9 +1,9 @@
 <div class="tabs">
-  <div id="current-block">
+  <div id="current-block" class="inter-text">
     <span>В работе:</span>
     <app-task-card *ngFor="let task of workTasks" [task]="task"></app-task-card>
   </div>
-  <div id="paused-block">
+  <div id="paused-block" class="inter-text">
     <span>На паузе: {{pausedTasks.length}}</span>
     <app-task-card *ngFor="let task of pausedTasks" [task]="task"></app-task-card>
   </div>
