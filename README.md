@@ -1,59 +1,47 @@
-# TaskCardBoard
+# Task Card Board
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+Интерфейс «Мои задачи» для трекера: список задач по вкладкам, карточки с этапами выполнения, быстрые действия и адаптивная вёрстка (десктоп и мобильное меню).
 
-## Development server
+**[Демо](https://yaraslaubondar.github.io/task-card-board/)** · Angular 19 · TypeScript · RxJS · SCSS
 
-To start a local development server, run:
+<!-- Добавьте сюда скриншот или GIF: ![Скриншот](docs/screenshot.png) -->
 
-```bash
-ng serve
+## Что реализовано
+
+- Роутинг с вложенными маршрутами (`В работе`, `На согласование`, `На ревью`, `Черновики`), счётчики задач во вкладках
+- Карточка задачи: маршрут (проект / платформа / версия), прогресс по этапам, исполнитель, время; кнопки действий появляются при наведении
+- Рабочий цикл задачи: **В работу → На паузу → Готово / Принять / Исправить**; одновременно в работе только одна задача, предыдущая автоматически уходит на паузу
+- Реактивное состояние на RxJS (`BehaviorSubject` в сервисе), отписка через `takeUntilDestroyed`
+- Кастомный выпадающий фильтр (`FormControl` + `@Input`), чистый `pipe` для расчёта прогресса
+- Адаптивная верстка: на экранах до 768 px верхнее меню заменяется плавающей мобильной панелью
+- Дизайн-токены цветов в SCSS (`styles/abstracts/color-styles.scss`)
+
+## Стек
+
+Angular 19 (NgModule), TypeScript 5.7, RxJS 7, SCSS, Angular Router, Reactive Forms.
+
+## Структура
+
+```
+src/app/
+  components/   header, home, main-board, right-board, task-card, filter, ...
+  services/     TaskMainService — состояние задач и действия над ними
+  pipes/        progressStage
+  consts/       моковые данные, вкладки, опции фильтров
+  interfaces/   ITask, ITaskStage, ...
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Запуск
 
 ```bash
-ng generate component component-name
+npm ci
+npm start          # http://localhost:4200
+npm run build      # сборка в dist/
+npm test
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Что можно улучшить
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Перейти на standalone-компоненты и сигналы
+- Подключить реальный API вместо моковых данных
+- Реализовать вкладки «На согласование», «На ревью», «Черновики»

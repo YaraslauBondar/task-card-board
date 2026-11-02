@@ -11,7 +11,7 @@ import {ITab, ITaskInfo} from '../../interfaces/task.interface';
 })
 export class HeaderComponent {
 
-  @Input() currentTask!: ITaskInfo;
+  @Input() currentTask: ITaskInfo | null = null;
 
   public time: string = '10:00';
   public routes: ITab[] = routes;

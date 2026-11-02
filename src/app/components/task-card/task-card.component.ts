@@ -1,4 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
+import {TaskMainService} from '../../services/task-main.service';
 import {ITask} from '../../interfaces/task.interface';
 
 @Component({
@@ -10,4 +11,11 @@ import {ITask} from '../../interfaces/task.interface';
 export class TaskCardComponent {
 
   @Input() task!: ITask;
+
+  private taskService = inject(TaskMainService);
+
+  start() { this.taskService.startTask(this.task.id); }
+  pause() { this.taskService.pauseTask(this.task.id); }
+  complete() { this.taskService.completeStage(this.task.id); }
+  fix() { this.taskService.returnStage(this.task.id); }
 }

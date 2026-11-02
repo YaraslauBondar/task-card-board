@@ -19,7 +19,10 @@ export class HomeComponent implements OnInit {
   public productOptions: string[] = products;
   public categoryOptions: string[] = categories;
 
-  public currentTask!: ITaskInfo;
+  public currentTask: ITaskInfo | null = null;
+  public today: string = new Intl.DateTimeFormat('ru-RU', {
+    weekday: 'long', day: 'numeric', month: 'long'
+  }).format(new Date());
 
   constructor(
     public taskMainService: TaskMainService,
@@ -31,12 +34,10 @@ export class HomeComponent implements OnInit {
     this.category = new FormControl('');
 
     this.taskMainService.getTasks().subscribe(tasks => {
-      const currentTask = tasks.filter(el =>
-        el.stages.current === 'work')[0];
-      this.currentTask = {
-        icon: currentTask.icon,
-        text: currentTask.title
-      }
+      const currentTask = tasks.find(el => el.stages.current === 'work');
+      this.currentTask = currentTask
+        ? { icon: currentTask.icon, text: currentTask.title }
+        : null;
     });
   }
 }

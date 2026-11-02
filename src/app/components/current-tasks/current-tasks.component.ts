@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit} from '@angular/core';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {TaskMainService} from '../../services/task-main.service';
 import {ITask} from '../../interfaces/task.interface';
 
@@ -17,13 +18,17 @@ export class CurrentTasksComponent implements OnInit {
   public myTasks: ITask[] = [];
   public otherTasks: ITask[] = [];
 
+  private destroyRef = inject(DestroyRef);
+
   constructor(
     public taskMainService: TaskMainService
   ) {
   }
 
   ngOnInit() {
-    this.taskMainService.mainTasksSubject.subscribe(tasks => {
+    this.taskMainService.mainTasksSubject
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(tasks => {
       this.myTasks = tasks?.filter(task =>
         !task.stages.current && task.user?.text === this.taskMainService.user
       ) || [];
